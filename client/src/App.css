@@ -1,0 +1,38 @@
+.App {
+  width: 80%;
+  margin: 10rem;
+  text-align: center;
+}
+
+#title {
+  font-size: 6rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin: auto;
+  border: 2px solid lightgray;
+  text-align: center;
+  padding: 12px;
+  width: 20%;
+  border-radius: 15px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  background-color: #ba90c6;
+  border: none;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 12px;
+  width: 15%;
+  border-radius: 15px;
+}
