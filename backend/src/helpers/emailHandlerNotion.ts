@@ -1,9 +1,8 @@
 require("dotenv").config();
-
-const notion = require("./notionConnection");
+import { Notion as notion } from "./notionConnection";
 const databaseId = process.env.NOTION_DATABASE_ID;
 
-async function addEmail(email) {
+async function addEmail(email: string) {
   try {
     await notion.pages.create({
       parent: { database_id: databaseId },
@@ -19,8 +18,9 @@ async function addEmail(email) {
         },
       },
     });
-  } catch (error) {
-    console.error(error.body);
+  } catch (error: any) {
+    console.log("There has been an error while submitting");
+    console.error(error);
   }
 }
 
