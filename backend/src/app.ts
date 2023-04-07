@@ -1,5 +1,6 @@
+import { Request, Response } from "express";
+import notionRouter from "./routes/notion";
 const express = require("express");
-const addEmail = require("./helpers/emailHandlerNotion.js");
 const cors = require("cors");
 const app = express();
 
@@ -10,9 +11,14 @@ app.use(
   })
 );
 
-app.post("/submit", async (req, res) => {});
-
 const port = 5001;
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello WOrld");
+});
+
+app.use("/submit", notionRouter);
+
 app.listen(port, () => {
   console.log(`Server is now Running on ${port}`);
 });
