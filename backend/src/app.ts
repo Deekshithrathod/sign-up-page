@@ -33,8 +33,6 @@ app.use(
 
 const port = process.env.PORT || 5001;
 
-app.use("/submit", notionRouter);
-
 app.get("/", (req: Request, res: Response) => {
   res.json({ msg: "Hello World" });
 });
@@ -42,3 +40,5 @@ app.get("/", (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is now Running on ${port}`);
 });
+
+app.use("/submit", notionRouter);
