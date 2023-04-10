@@ -16,9 +16,7 @@ const SignUp = () => {
     event.preventDefault();
     setIsClicked((prevState) => !prevState);
     const baseURL = "https://sign-up-page-backend.onrender.com";
-    // const baseURL = "http://localhost";
-    const port = "5002";
-    const url = `${baseURL}:${port}/submit/notion`;
+    const url = `${baseURL}/submit/notion`;
 
     const data = { email: formData.email };
 
