@@ -1,3 +1,4 @@
+import { Response } from "express";
 import notionRouter from "./routes/notion";
 import cors, { CorsOptions } from "cors";
 
@@ -33,6 +34,10 @@ app.use(
 const port = process.env.PORT || 5001;
 
 app.use("/submit", notionRouter);
+
+app.get("/", (req: Request, res: Response) => {
+  res.json({ msg: "Hello World" });
+});
 
 app.listen(port, () => {
   console.log(`Server is now Running on ${port}`);
