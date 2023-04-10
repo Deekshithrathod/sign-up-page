@@ -4,7 +4,7 @@ const databaseId = process.env.NOTION_DATABASE_ID;
 
 async function addEmail(email: string) {
   try {
-    await notion.pages.create({
+    return await notion.pages.create({
       parent: { database_id: databaseId },
       properties: {
         title: {

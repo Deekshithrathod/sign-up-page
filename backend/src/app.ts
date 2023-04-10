@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
 import notionRouter from "./routes/notion";
 const express = require("express");
 const cors = require("cors");
 const app = express();
+require("dotenv").config();
 
 app.use(express.json());
 app.use(
@@ -11,11 +11,7 @@ app.use(
   })
 );
 
-const port = 5001;
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello WOrld");
-});
+const port = process.env.PORT || 5001;
 
 app.use("/submit", notionRouter);
 
