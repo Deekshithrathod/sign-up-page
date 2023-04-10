@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const SignUp = () => {
+  const [isClicked, setIsClicked] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -10,12 +11,17 @@ const SignUp = () => {
       [event.target.name]: event.target.value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(formData);
-    const url = "http://localhost:5001/submit";
+    setIsClicked((prevState) => !prevState);
+    const baseURL = "https://sign-up-page-backend.onrender.com";
+    // const baseURL = "http://localhost";
+    const port = "5002";
+    const url = `${baseURL}:${port}/submit/notion`;
+
     const data = { email: formData.email };
-    console.log(data);
+
     fetch(url, {
       method: "POST",
       headers: {
@@ -25,9 +31,10 @@ const SignUp = () => {
     })
       .then((response) => response.json())
       .then((resData) => {
+        setIsClicked((prevState) => !prevState);
         console.log(resData);
       })
-      .catch((error) => {});
+      .catch((error) => console.error(error));
   };
   return (
     <div>
@@ -39,7 +46,7 @@ const SignUp = () => {
           name="email"
         />
 
-        <button>Join</button>
+        <button disabled={isClicked}>Join</button>
       </form>
     </div>
   );
