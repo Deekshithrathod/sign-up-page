@@ -2,10 +2,14 @@
   width: 80%;
   margin: 10rem;
   text-align: center;
+  position: relative;
 }
 
-#title {
-  font-size: 6rem;
+.title {
+  position: relative;
+  bottom: 50px;
+  font-size: 4rem;
+  line-height: 2;
 }
 
 form {
@@ -27,7 +31,7 @@ input:focus::placeholder {
   color: transparent;
 }
 
-button {
+/* button {
   background-color: #ba90c6;
   border: none;
   margin-top: 20px;
@@ -35,8 +39,75 @@ button {
   padding: 12px;
   width: 15%;
   border-radius: 15px;
+} */
+button {
+  background-color: black;
 }
-
 button:disabled {
   background-color: gainsboro;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: #ea9a81;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar > div {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+
+.navbar > ul {
+  margin: auto;
+  width: 80%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+form > input {
+  margin-bottom: 23px;
+  width: 320px;
+  height: 32px;
+  background: #d9d9d9;
+  border: 2px solid #000000;
+  border-radius: 8px;
+}
+
+form > button {
+  width: 178px;
+  height: 40px;
+  left: 616px;
+  top: 723px;
+
+  background: black;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+.emailValidation {
+  position: relative;
+  bottom: 65px;
+  left: 140px;
+}
+
+.thankyou {
+  position: relative;
+  bottom: 150px;
+}
+
+.thankyou h1 {
+  position: relative;
+  top: 150px;
+  margin-top: 150px;
 }
